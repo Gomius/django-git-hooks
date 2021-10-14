@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 DEBUG = str(os.environ.get('DJANGO_DEBUG')) == '1'
 
-ENV_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST') or None
+ENV_ALLOWED_HOST = str(os.environ.get('DJANGO_ALLOWED_HOST')) or None
 ALLOWED_HOSTS = []
 if ENV_ALLOWED_HOST is not None:
     ALLOWED_HOSTS = [ ENV_ALLOWED_HOST ]
